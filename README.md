@@ -49,8 +49,7 @@ context.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUS
          app:Sentence="Text 1 # Bold Text2% # Text3"
          app:TextIsHint="false"
          app:panHeight="12"
-         app:pannerId="@+id/pan"
-         tools:ignore="RtlSymmetry" />
+         app:pannerId="@+id/pan"/>
 
 ```
 
