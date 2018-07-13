@@ -47,7 +47,6 @@ context.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUS
   <linkersoft.blackpanther.text.ColorEditText
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
-         android:textColor="#f53457"
          android:textSize="14sp"
          app:Colours="#F53457:#A31730:#00a0b4"
          app:Sentence="Text 1 # Bold Text2% # Text3"
