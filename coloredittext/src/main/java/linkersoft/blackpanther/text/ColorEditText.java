@@ -1,4 +1,4 @@
-package linkersoft.blackpanther.coloredittext;
+package linkersoft.blackpanther.text;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -8,11 +8,7 @@ import android.util.AttributeSet;
 import java.io.IOException;
 
 
-/**
- * Created by LiNKeR on 10/8/2017.
- */
-
-public class ColorEditText extends softEditText{
+public class ColorEditText extends SoftEditText {
 
 
 
@@ -33,25 +29,25 @@ public class ColorEditText extends softEditText{
             return "<b>"+text+"</b>";
         }
 
-        public void setText (String textstatement, String colorstatement, boolean txtIsHint){
-            if(textstatement==null||colorstatement==null)return;
-            String words[]=textstatement.split("#"),colors[]=colorstatement.split(":"),coloredSentence="",wrd;
+        public void setText (String textStatement, String colorStatement, boolean textIsHint){
+            if(textStatement==null||colorStatement==null)return;
+            String words[]=textStatement.split("#"),colors[]=colorStatement.split(":"),coloredSentence="",wrd;
             if(words.length!=colors.length)throw new IllegalStateException("color.length!=words.length");
             for (int i = 0; i < words.length; i++){
                 wrd=ColoredhtmlString(words[i],colors[i]);
                 if(wrd.contains("}")) wrd=wrd.replace('}','#');
                 if(wrd.contains("%")) wrd=boldhtmlString(wrd.split("%")[0]);
                 coloredSentence+=wrd;
-            }if(txtIsHint)setHint(Html.fromHtml(coloredSentence)); else setText(Html.fromHtml(coloredSentence));
+            }if(textIsHint)setHint(Html.fromHtml(coloredSentence)); else setText(Html.fromHtml(coloredSentence));
             pureString=""+getText();
         }
         void In(Context context, AttributeSet attrs){
             boolean txtIsHint;
             TypedArray _attrs = context.getTheme().obtainStyledAttributes(attrs, R.styleable.ColorEditText, 0, 0);
             try{
-                textstatement =_attrs.getString(R.styleable.ColorEditText_eSentence);
-                colorstatement =_attrs.getString(R.styleable.ColorEditText_eColours);
-                txtIsHint=_attrs.getBoolean(R.styleable.ColorEditText_eTxtIsHint,false);
+                textstatement =_attrs.getString(R.styleable.ColorEditText_Sentence);
+                colorstatement =_attrs.getString(R.styleable.ColorEditText_Colours);
+                txtIsHint=_attrs.getBoolean(R.styleable.ColorEditText_TextIsHint,false);
             }finally{_attrs.recycle();}
             setText(textstatement,colorstatement,txtIsHint);
         }

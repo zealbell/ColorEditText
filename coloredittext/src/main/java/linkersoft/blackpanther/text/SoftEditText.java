@@ -1,4 +1,4 @@
-package linkersoft.blackpanther.coloredittext;
+package linkersoft.blackpanther.text;
 
 import android.app.Activity;
 import android.content.Context;
@@ -6,27 +6,26 @@ import android.content.res.TypedArray;
 import android.support.annotation.Nullable;
 import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
 
 
-public class softEditText extends EditText {
+public class SoftEditText extends EditText {
 
-    public softEditText(Context context, @Nullable AttributeSet attrs) {
+    public SoftEditText(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         in(context,attrs);
     }
-    public softEditText(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public SoftEditText(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         in(context,attrs);
     }
     void in(Context context, AttributeSet attrs){
-        TypedArray tar = context.getTheme().obtainStyledAttributes(attrs, R.styleable.softEditText, 0, 0);
-        try{panHeight =tar.getInt(R.styleable.softEditText_panHeight,-1);
-            pannerId =tar.getResourceId(R.styleable.softEditText_pannerId,-1);
+        TypedArray tar = context.getTheme().obtainStyledAttributes(attrs, R.styleable.SoftEditText, 0, 0);
+        try{panHeight =tar.getInt(R.styleable.SoftEditText_panHeight,-1);
+            pannerId =tar.getResourceId(R.styleable.SoftEditText_pannerId,-1);
             if(panHeight!=-1)panHeight=dp2px(panHeight,context);
         }catch (Exception e){
         }finally{tar.recycle();}
@@ -50,13 +49,8 @@ public class softEditText extends EditText {
         }
     }
 
-    public void setkeyboardListener(SoftKeyboard.keyboardListener skL){
-        SoftKeyboard.setkeyboardListener(ContentView, skL);
-    }
-    public void removekeyboardListener(){
-        SoftKeyboard.removekeyboardListener();
-    }
-    public void setPanning(final View rootPanner){
+
+    private void setPanning(final View rootPanner){
         bottomY =getAbsY() + getHeight();
         setkeyboardListener(new SoftKeyboard.keyboardListener() {
             float transY;
@@ -80,7 +74,7 @@ public class softEditText extends EditText {
             }
         });
     }
-    public float getKeyboardY() {
+    private float getKeyboardY() {
         return keyboardY;
     }
     private int getAbsY(){
@@ -108,12 +102,19 @@ public class softEditText extends EditText {
         this.pannerView=pannerView;
         this.panHeight=panHeight;
     }
+    public void setkeyboardListener(SoftKeyboard.keyboardListener listener){
+        SoftKeyboard.setkeyboardListener(ContentView, listener);
+    }
+    public void removekeyboardListener(){
+        SoftKeyboard.removekeyboardListener();
+    }
 
-    boolean calledKeyboard;
-    View ContentView,pannerView;
-    int panHeight,pannerId;
-    Context context;
-    float keyboardY;
-    float bottomY;
+    private boolean calledKeyboard;
+    private View ContentView,pannerView;
+    private int panHeight,pannerId;
+    private Context context;
+    private float keyboardY;
+    private float bottomY;
 
 }
+

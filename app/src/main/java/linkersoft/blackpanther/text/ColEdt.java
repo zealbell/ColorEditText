@@ -1,7 +1,8 @@
-package linkersoft.blackpanther.coloredittext;
+package linkersoft.blackpanther.text;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.EditText;
 
 public class ColEdt extends AppCompatActivity {
 
@@ -9,5 +10,6 @@ public class ColEdt extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.col_edt);
+
     }
 }

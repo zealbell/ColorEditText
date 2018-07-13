@@ -1,4 +1,4 @@
-package linkersoft.blackpanther.coloredittext;
+package linkersoft.blackpanther.text;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

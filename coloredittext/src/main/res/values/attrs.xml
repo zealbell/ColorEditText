@@ -1,14 +1,11 @@
 <resources>
     <declare-styleable name="ColorEditText">
-        <attr name="eSentence" format="string"/>
-        <attr name="eColours" format="string"/>
-        <attr name="eTxtIsHint" format="boolean"/>
+        <attr name="Sentence" format="string"/>
+        <attr name="Colours" format="string"/>
+        <attr name="TextIsHint" format="boolean"/>
     </declare-styleable>
-    <declare-styleable name="softEditText">
+    <declare-styleable name="SoftEditText">
         <attr name="panHeight" format="integer"/>
         <attr name="pannerId" format="reference"/>
-    </declare-styleable>
-    <declare-styleable name="FontTextview">
-        <attr name="customFont" format="string"/>
     </declare-styleable>
 </resources>

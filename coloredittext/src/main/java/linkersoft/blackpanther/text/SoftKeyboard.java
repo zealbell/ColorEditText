@@ -1,4 +1,4 @@
-package linkersoft.blackpanther.coloredittext;
+package linkersoft.blackpanther.text;
 
 import android.app.Activity;
 import android.content.Context;
@@ -37,37 +37,37 @@ public class SoftKeyboard {
 
     private static ViewTreeObserver vTo;
     private static ViewTreeObserver.OnGlobalLayoutListener onGlobalLayoutListener;
-    public static void setImeOptions(EditText Ex, String Type){
+    public static void setImeOptions(ColorEditText ColEx, String Type){
         switch (Type){
-            case "search":
-                Ex.setImeOptions(EditorInfo.IME_ACTION_SEARCH);
+            case "SEARCH":
+                ColEx.setImeOptions(EditorInfo.IME_ACTION_SEARCH);
                 break;
-            case "done":
-                Ex.setImeOptions(EditorInfo.IME_ACTION_DONE);
+            case "DONE":
+                ColEx.setImeOptions(EditorInfo.IME_ACTION_DONE);
                 break;
-            case "go":
-                Ex.setImeOptions(EditorInfo.IME_ACTION_GO);
+            case "GO":
+                ColEx.setImeOptions(EditorInfo.IME_ACTION_GO);
                 break;
-            case "next":
-                Ex.setImeOptions(EditorInfo.IME_ACTION_NEXT);
+            case "NEXT":
+                ColEx.setImeOptions(EditorInfo.IME_ACTION_NEXT);
                 break;
-            case "email":
-                Ex.setImeOptions(EditorInfo.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
+            case "EMAIL":
+                ColEx.setImeOptions(EditorInfo.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
                 break;
-            case "password":
-                Ex.setImeOptions(EditorInfo.TYPE_TEXT_VARIATION_PASSWORD);
+            case "PASSWORD":
+                ColEx.setImeOptions(EditorInfo.TYPE_TEXT_VARIATION_PASSWORD);
                 break;
-            case "name":
-                Ex.setImeOptions(EditorInfo.TYPE_TEXT_VARIATION_PERSON_NAME);
+            case "NAME":
+                ColEx.setImeOptions(EditorInfo.TYPE_TEXT_VARIATION_PERSON_NAME);
                 break;
-            case "number":
-                Ex.setImeOptions(EditorInfo.TYPE_NUMBER_VARIATION_NORMAL);
+            case "NUMBER":
+                ColEx.setImeOptions(EditorInfo.TYPE_NUMBER_VARIATION_NORMAL);
                 break;
-            case "pin":
-                Ex.setImeOptions(EditorInfo.TYPE_NUMBER_VARIATION_PASSWORD);
+            case "PIN":
+                ColEx.setImeOptions(EditorInfo.TYPE_NUMBER_VARIATION_PASSWORD);
                 break;
         }
-        Ex.setImeOptions(EditorInfo.IME_ACTION_SEARCH);
+        ColEx.setImeOptions(EditorInfo.IME_ACTION_SEARCH);
     }
     public static void setkeyboardListener(final View contentView, keyboardListener xkL) {
 //        if(kL==null||activity==null)throw new NullPointerException("Activity||keyboardListener must !=null ");
@@ -95,5 +95,16 @@ public class SoftKeyboard {
     }
     public static void removekeyboardListener(){
         vTo.removeOnGlobalLayoutListener(onGlobalLayoutListener);
+    }
+    public static class Type{
+            String SEARCH="SEARCH";
+            String DONE="DONE";
+            String GO="GO";
+            String NEXT="NEXT";
+            String EMAIL="EMAIL";
+            String PASSWORD="PASSWORD";
+            String NAME="NAME";
+            String NUMBER="NUMBER";
+            String PIN="PIN";
     }
 }

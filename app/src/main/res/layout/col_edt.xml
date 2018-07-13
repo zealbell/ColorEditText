@@ -4,15 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="linkersoft.blackpanther.coloredittext.ColEdt">
+    tools:context="linkersoft.blackpanther.text.ColEdt">
 
-    <TextView
+
+    <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:tag="View to Pan when keyboard is called"
+        android:id="@+id/pan">
+
+        <linkersoft.blackpanther.text.ColorEditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#f53457"
+            android:textColorHighlight="#80ffffff"
+
+            android:textSize="14sp"
+            app:Colours="#F53457:#A31730:#00a0b4"
+            app:Sentence="Text 1 # Bold Text2% # Text3"
+            app:TextIsHint="true"
+            app:panHeight="12"
+            app:pannerId="@+id/pan" />
+
+    </FrameLayout>
+
+
 
 </android.support.constraint.ConstraintLayout>
