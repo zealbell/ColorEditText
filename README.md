@@ -28,6 +28,7 @@ This Library consists of three Views:
 
 ## Quick Start
 > Activity
+
  Have this in your activity if you specified panning statically/dynamically.
 ```java
 context.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
