@@ -35,10 +35,13 @@ context.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUS
 > Gradle
 ```xml
    dependencies {
-      compile 'com.github.54LiNKeR:ColorEditText:1.0.0'
+      implementation 'com.github.54LiNKeR:ColorEditText:1.0.0'
    }
 ```
 > Layout
+
+![Demo](shots/color-edit.png)
+
 ```xml
   <linkersoft.blackpanther.text.ColorEditText
          android:layout_width="wrap_content"
