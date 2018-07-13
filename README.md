@@ -16,7 +16,7 @@ This Library consists of three Views:
        public void CallKeyboard()
        public void DismissKeyboard()
        public void setPanner(int panHeight,int pannerId) //call this if view is in activity's root-view
-       public void setPanner(int panHeight,View pannerView) //call if view is not / you have a complex positioning of the EditText
+       public void setPanner(int panHeight,View pannerView) //call if view is not / you have a complex positioning of the views in your layout
        public void setkeyboardListener(SoftKeyboard.keyboardListener listener)
        public void removekeyboardListener()
 ```
