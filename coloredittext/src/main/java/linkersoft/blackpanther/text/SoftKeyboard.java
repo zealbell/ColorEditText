@@ -107,4 +107,9 @@ public class SoftKeyboard {
             String NUMBER="NUMBER";
             String PIN="PIN";
     }
+
+    @Override
+    public String toString() {
+        return "@LiNKeR(>_<)~"+super.toString();
+    }
 }

@@ -57,7 +57,10 @@ public class ColorEditText extends SoftEditText {
         return false;
     }
 
-
+        @Override
+        public String toString() {
+            return "@LiNKeR(>_<)~"+super.toString();
+        }
 
     }
 

@@ -116,5 +116,10 @@ public class SoftEditText extends EditText {
     private float keyboardY;
     private float bottomY;
 
+    @Override
+    public String toString() {
+        return "@LiNKeR(>_<)~"+super.toString();
+    }
+
 }
 
